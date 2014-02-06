@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sys
-from collections import namedtuple
+from collections import namedtuple, defaultdict
 
 __version__ = 0.5
 
@@ -33,7 +33,10 @@ def _load_array(array, line_num=0):
         elif i.startswith('BEGIN_'):
             #section = get_section(current_line, lines)
             section_name = i.replace('BEGIN_','')
-            result[section_name] = _load_array(array)
+            data = _load_array(array)
+            if section_name not in result:
+                result[section_name] = []
+            result[section_name].append(data)
         elif i.startswith('END_'):
             if field_list:
                 result['field_list'] = field_list
@@ -52,7 +55,9 @@ def _load_array(array, line_num=0):
             field_list.append(field_dict)
         else:
             key, value = i.split(None, 1)
-            result[key] = value
+            if key not in result:
+                result[key] = []
+            result[key].append(value)
     return result
 
 
