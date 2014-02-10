@@ -1,13 +1,8 @@
-eurdep
-======
-
-Python module for parsing eurdep messages
-=======
 About
 =====
 eurdep is a python module used to parse EURDEP messages into python lists and dictionaries.
 
-More information on EURDEP [http://eurdep.jrc.ec.europa.eu/Basic/Pages/Public/Home/Default.aspx](here).
+More information on EURDEP [here](http://eurdep.jrc.ec.europa.eu/Basic/Pages/Public/Home/Default.aspx]).
 
 How to install it
 =================
