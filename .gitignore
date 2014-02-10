@@ -3,6 +3,9 @@
 # C extensions
 *.so
 
+# Pycharm project files
+.idea
+
 # Packages
 *.egg
 *.egg-info
